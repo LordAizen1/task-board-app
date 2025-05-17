@@ -2,6 +2,10 @@
 
 A modern task management board application with drag-and-drop functionality, built with React, TypeScript, and Express.js. This application allows users to organize tasks across different status columns (To Do, In Progress, Done) in a visually appealing interface with both light and dark mode support.
 
+## Live Demo
+
+Check out the live application at [https://lordaizen1.github.io/task-board-app/](https://lordaizen1.github.io/task-board-app/)
+
 ![Task Board Application Screenshot](screenshot.png)
 
 ## Table of Contents
@@ -22,6 +26,7 @@ A modern task management board application with drag-and-drop functionality, bui
   - Create, edit, and delete tasks
   - Organize tasks in three columns: To Do, In Progress, and Done
   - Persistent storage using a file-based backend
+  - Offline functionality with client-side storage (when deployed)
 
 - **Drag and Drop**
   - Move tasks between columns with intuitive drag-and-drop functionality
@@ -29,7 +34,7 @@ A modern task management board application with drag-and-drop functionality, bui
   - Celebratory animation when moving tasks to Done column
 
 - **UI/UX**
-  - Responsive design that works on both mobile and desktop
+  - Responsive design that works on both mobile and desktop devices
   - Light and dark mode with system preference detection
   - Modern, clean interface with subtle animations
   - Notification system for task completion
@@ -47,6 +52,7 @@ A modern task management board application with drag-and-drop functionality, bui
 - **Node.js** with Express.js
 - **File-based JSON storage**
 - **RESTful API** design
+- **Fallback mock data** for client-side operation when deployed
 
 ## Project Structure
 
@@ -90,7 +96,7 @@ A modern task management board application with drag-and-drop functionality, bui
 
 1. Clone the repository
    ```
-   git clone https://github.com/yourusername/task-board-app.git
+   git clone https://github.com/LordAizen1/task-board-app.git
    cd task-board-app
    ```
 
@@ -202,6 +208,7 @@ A service module that handles API communication with the backend.
 - `updateTask`: Updates an existing task
 - `deleteTask`: Deletes a task
 - `updateTaskStatus`: Updates a task's status
+- Includes fallback mock data for GitHub Pages deployment
 
 ## API Documentation
 
@@ -217,7 +224,44 @@ The backend provides a RESTful API for task management:
 
 ## Deployment
 
-### Deploying to Netlify
+### GitHub Pages Deployment
+
+This application is deployed on GitHub Pages with offline functionality. The deployed version uses client-side storage to provide a fully functional experience without requiring the backend server.
+
+1. Configure the repository for GitHub Pages
+   ```
+   npm install --save-dev gh-pages
+   ```
+
+2. Add the following to package.json:
+   ```json
+   {
+     "homepage": "https://username.github.io/task-board-app",
+     "scripts": {
+       "predeploy": "npm run build",
+       "deploy": "gh-pages -d dist"
+     }
+   }
+   ```
+
+3. Modify vite.config.ts to include the base path:
+   ```typescript
+   export default defineConfig({
+     plugins: [react()],
+     base: '/task-board-app/',
+   });
+   ```
+
+4. Implement offline functionality in api.ts by detecting GitHub Pages environment and using mock data.
+
+5. Deploy to GitHub Pages:
+   ```
+   npm run deploy
+   ```
+
+### Alternative Deployment Methods
+
+#### Deploying to Netlify
 
 1. Create a production build of the frontend
    ```
@@ -271,6 +315,14 @@ After deploying the backend, update the `API_URL` in `src/services/api.ts` to po
 
 ## Development Notes
 
+### Mobile Responsiveness
+
+The application has been optimized for mobile devices with:
+- Fluid column layouts that stack vertically on small screens
+- Appropriately sized touch targets for mobile interaction
+- Overflow handling to prevent layout issues
+- Fixed positioning for modals and notifications
+
 ### Potential Improvements
 
 1. User authentication and multi-user support
@@ -278,7 +330,17 @@ After deploying the backend, update the `API_URL` in `src/services/api.ts` to po
 3. Task priorities and due dates
 4. Filter and search functionality
 5. Labels and tags for tasks
+6. Offline synchronization when reconnected
 
 ### Known Issues
 
 1. React Beautiful DnD has compatibility issues with React 18's Strict Mode. We've disabled Strict Mode to ensure proper drag-and-drop functionality. For a production application, consider using an alternative like `@hello-pangea/dnd` (a maintained fork of react-beautiful-dnd) or `dnd-kit`.
+
+## AI Assistance
+
+This project was developed with the assistance of an AI coding tool. The AI helped with:
+- Setting up the project structure
+- Implementing React components and context providers
+- Integrating the drag-and-drop functionality
+- Creating the Express backend
+- Configuring the GitHub Pages deployment
