@@ -338,9 +338,17 @@ The application has been optimized for mobile devices with:
 
 ## AI Assistance
 
-This project was developed with the assistance of an AI coding tool. The AI helped with:
-- Setting up the project structure
-- Implementing React components and context providers
-- Integrating the drag-and-drop functionality
-- Creating the Express backend
-- Configuring the GitHub Pages deployment
+This project was developed with the assistance of several AI tools:
+
+- **Cursor AI**: Used as the primary code editor with AI assistance for code generation, debugging, and refactoring
+- **Bolt AI**: Used for initial project ideas, architecture suggestions, and design concepts
+- **Claude AI**: Helped with:
+  - Setting up the project structure
+  - Implementing React components and context providers
+  - Integrating the drag-and-drop functionality
+  - Creating the Express backend
+  - Configuring the GitHub Pages deployment
+  - Improving mobile responsiveness
+  - Writing documentation
+
+AI tools were instrumental in accelerating development while maintaining code quality and following best practices.
