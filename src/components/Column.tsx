@@ -61,7 +61,7 @@ const Column: React.FC<ColumnProps> = ({
   };
 
   return (
-    <div className={`flex flex-col rounded-lg border ${getColumnStyle(columnId)} shadow-md h-full transition-all duration-300 hover:shadow-lg`}>
+    <div className={`flex flex-col rounded-lg border ${getColumnStyle(columnId)} shadow-md h-full md:max-h-[calc(100vh-180px)] transition-all duration-300 hover:shadow-lg mb-4 md:mb-0`}>
       <div className={`p-3 ${getHeaderStyle(columnId)} rounded-t-lg flex justify-between items-center`}>
         <div className="flex items-center">
           {getColumnIcon(columnId)}
@@ -93,7 +93,7 @@ const Column: React.FC<ColumnProps> = ({
                   ? 'bg-green-100/50 dark:bg-green-900/20' 
                   : 'bg-gray-100/80 dark:bg-gray-700/30' 
                 : ''
-            } transition-colors min-h-[200px] rounded-b-lg`}
+            } transition-colors min-h-[100px] max-h-full rounded-b-lg`}
             style={{
               background: snapshot.isDraggingOver 
                 ? columnId === 'done'

@@ -119,9 +119,9 @@ const Board: React.FC = () => {
   }
 
   return (
-    <div className="h-full">
+    <div className="h-full flex flex-col overflow-hidden">
       <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full overflow-y-auto pb-4 md:overflow-visible">
           <Column
             columnId="todo"
             title="To Do"

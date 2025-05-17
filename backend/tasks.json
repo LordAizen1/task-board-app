@@ -3,24 +3,31 @@
     "id": "6ad4bc2a-3f34-4978-8712-81548d5eec8f",
     "title": "Complete project setup on time (bruh)",
     "description": "Set up the React and Node.js environment",
-    "status": "done",
+    "status": "todo",
     "createdAt": "2025-05-17T04:00:12.316Z",
-    "updatedAt": "2025-05-17T10:04:13.732Z"
+    "updatedAt": "2025-05-17T11:20:37.949Z"
   },
   {
     "id": "14761ff6-853b-419c-bae5-0ca731a541f7",
     "title": "Write documentation",
     "description": "Create README and API documentation",
-    "status": "todo",
+    "status": "inProgress",
     "createdAt": "2025-05-17T04:00:12.316Z",
-    "updatedAt": "2025-05-17T10:02:01.162Z"
+    "updatedAt": "2025-05-17T11:17:26.017Z"
   },
   {
     "id": "bc045b04-1a4f-441d-889c-d4829b1d047b",
     "title": "Research Market",
     "description": "Look through the previous data",
-    "status": "inProgress",
+    "status": "done",
     "createdAt": "2025-05-17T09:47:26.490Z",
-    "updatedAt": "2025-05-17T10:04:18.097Z"
+    "updatedAt": "2025-05-17T11:20:40.343Z"
+  },
+  {
+    "id": "59823a12-2b1c-4f35-8ba2-05a6398eda23",
+    "title": "susy",
+    "description": "omae wa mou shindeiru",
+    "status": "done",
+    "createdAt": "2025-05-17T11:43:34.215Z"
   }
 ]

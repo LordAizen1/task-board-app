@@ -1,7 +1,7 @@
 {
   "name": "task-board-app",
-  "private": true,
   "version": "0.1.0",
+  "homepage": "https://LordAizen1.github.io/task-board-app",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,29 +9,32 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node backend/server.js",
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "axios": "^1.6.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "react-beautiful-dnd": "^13.1.1",
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
-    "uuid": "^9.0.1",
-    "axios": "^1.6.7"
+    "react-dom": "^18.3.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
     "@types/react": "^18.3.5",
-    "@types/react-dom": "^18.3.0",
     "@types/react-beautiful-dnd": "^13.1.8",
+    "@types/react-dom": "^18.3.0",
     "@types/uuid": "^9.0.8",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.18",
     "eslint": "^9.9.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
+    "gh-pages": "^6.3.0",
     "globals": "^15.9.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
