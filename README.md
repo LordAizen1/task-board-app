@@ -259,60 +259,6 @@ This application is deployed on GitHub Pages with offline functionality. The dep
    npm run deploy
    ```
 
-### Alternative Deployment Methods
-
-#### Deploying to Netlify
-
-1. Create a production build of the frontend
-   ```
-   npm run build
-   ```
-
-2. Create a `netlify.toml` file in the project root with the following content:
-   ```toml
-   [build]
-     publish = "dist"
-     command = "npm run build"
-
-   [[redirects]]
-     from = "/*"
-     to = "/index.html"
-     status = 200
-   ```
-
-3. Install Netlify CLI (if not already installed)
-   ```
-   npm install -g netlify-cli
-   ```
-
-4. Login to Netlify
-   ```
-   netlify login
-   ```
-
-5. Deploy the site
-   ```
-   netlify deploy
-   ```
-   
-   Follow the prompts to complete the deployment.
-
-6. For production deployment
-   ```
-   netlify deploy --prod
-   ```
-
-### Handling the Backend
-
-For the backend, you'll need a service that can run Node.js applications. Here are some options:
-
-1. **Render**: Offers easy Node.js deployment with a generous free tier
-2. **Railway**: Simple deployment for Node.js apps
-3. **Vercel**: Good for deploying Node.js applications
-4. **Heroku**: Classic platform for Node.js applications (free tier no longer available)
-
-After deploying the backend, update the `API_URL` in `src/services/api.ts` to point to your deployed backend URL.
-
 ## Development Notes
 
 ### Mobile Responsiveness
